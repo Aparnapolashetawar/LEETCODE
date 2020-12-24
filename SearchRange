@@ -1,0 +1,21 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        li=[-1,-1]
+        li_0=[0,0]
+        if target not in nums:
+            return li
+        elif len(nums)==1:
+            return li_0
+        elif len(nums)>1:
+            if nums.count(target)==1:
+                l=[nums.index(target)]*2
+                return l
+            elif nums.count(target)>1:
+                modified=[]
+                for key,value in enumerate(nums):
+                    if value==target:
+                        modified.append(key)
+                mi=min(modified)
+                ma=max(modified)
+                modify=[mi,ma]
+                return modify
