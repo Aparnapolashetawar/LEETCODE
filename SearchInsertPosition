@@ -1,0 +1,6 @@
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        for indx,val in enumerate(nums):
+            if val > target or val==target:
+                return indx
+        return indx+1
