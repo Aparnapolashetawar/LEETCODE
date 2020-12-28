@@ -1,0 +1,32 @@
+class Solution:
+    # def maximumSwap(self, num: int) -> int:
+        # max_v=0
+        # li=list(str(num))
+        # max_v=max(li)
+        # if len(li)==1:
+        #     return num
+        # else:
+        #     x=li[0]
+        #     y=li.index(str(max_v))
+        #     li[0]=str(max_v)
+        #     li[y]=x
+        #     strl=''
+        #     for i in li:
+        #         strl+=i
+        #     f=int(strl)
+        #     return f
+        def helper(self, l):
+            if len(l) == 1:
+                return l
+            m = max(l)
+            if l[0] == m:
+                return [m] + self.helper(l[1:])
+            else:
+                ind = len(l) - 1 - l[::-1].index(m)
+                l[ind], l[0] = l[0], l[ind]
+                return l   
+        
+        def maximumSwap(self, num: int) -> int:
+            l = [int(s) for s in str(num)]
+            sl = self.helper(l)
+            return int(''.join([str(n) for n in sl]))
