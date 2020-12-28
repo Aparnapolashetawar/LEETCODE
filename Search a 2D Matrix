@@ -1,0 +1,10 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        li=[]
+        for i in matrix:
+            li.extend(i)
+        if target in li:
+            return True
+        else:
+            return False
+        
