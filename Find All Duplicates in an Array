@@ -1,0 +1,10 @@
+def findDuplicates(self, nums: List[int]) -> List[int]:
+        dups = []
+        for n in nums:
+            idx = abs(n) - 1
+            if nums[idx] < 0:
+                dups.append(abs(n))
+            else:
+                nums[idx] *= -1
+            
+        return dups
