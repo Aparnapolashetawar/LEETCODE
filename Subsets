@@ -1,0 +1,15 @@
+from itertools import combinations
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        if not nums:
+            return
+        my_list = []
+        for i in range(len(nums)):
+            my_list.append(list(combinations(nums, i)))
+        subsets = []
+        for lst in my_list:
+            for i in lst:
+                subsets.append(list(i))
+        if nums not in my_list:
+            subsets.append(nums)
+        return subsets
