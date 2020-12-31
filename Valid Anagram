@@ -1,0 +1,18 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return ''.join(sorted(s))==''.join(sorted(t))
+        
+        # li_s=list(s)
+        # li_t=list(t)
+        # li_f=[]
+        # count=0
+        # if len(li_s)==len(li_t):
+        #     for i in li_s:
+        #         if li_s.count(i)==li_t.count(i):
+        #             li_f.append(i)
+        #     if len(li_f)==len(li_s):
+        #         return True
+        #     else:
+        #         return False
+        # else:
+        #     return False
