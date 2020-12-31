@@ -1,0 +1,11 @@
+class Solution:
+    def uncommonFromSentences(self, A: str, B: str) -> List[str]:
+        li_a=A.split(' ')
+        li_b=B.split(' ')
+        li=li_a+li_b
+        l=[]
+        for i in li:
+            if li.count(i)==1:
+                l.append(i)
+        return l
+        
