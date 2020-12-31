@@ -1,0 +1,7 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        l1=list(s)
+        l2=list(t)
+        for x in l1:
+            l2.remove(x)
+        return l2[0]
