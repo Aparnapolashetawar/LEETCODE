@@ -1,0 +1,21 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        p = list(pattern)
+        s = list(s.split())
+        
+        if len(p) != len(s):
+            return False
+        
+        d = {}
+        flag = True
+       
+        for i, x in enumerate(p):
+            if x not in d:
+                if s[i] in d.values():
+                    flag=False
+                d[x] = s[i]
+                
+            else:
+                if d[x] != s[i]:
+                    flag = False
+        return flag
