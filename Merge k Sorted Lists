@@ -1,0 +1,25 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        li=[]
+        for i in lists:
+            lij=i
+            while lij:
+                li.append(lij.val)
+                lij=lij.next
+        print(li)
+        li.sort()
+        if len(li)!=0:
+            l=h=ListNode(li[0])
+            for i in range(1,len(li)):
+                l.next=ListNode(li[i])
+                l=l.next
+            return h
+        else:
+            return None
+        
