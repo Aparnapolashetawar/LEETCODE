@@ -1,0 +1,8 @@
+class Solution:
+    def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+        li=sentence.split(' ')
+        for i in li:
+            if i.startswith(searchWord):
+                return li.index(i)+1
+        else:
+            return -1
