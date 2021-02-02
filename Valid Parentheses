@@ -1,0 +1,41 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) <= 1:
+            return False
+
+        stack = []
+        for ch in s:
+		    # If open brackets, push onto the stack
+            if ch == '(' or ch == '{' or ch == '[':
+                stack.append(ch)
+			# if close ')' pop and compare the pair to be opposite version of it
+            elif ch == ')' and stack and stack.pop() == '(':
+                continue
+			# if close '}' pop and compare the pair to be opposite version of it
+            elif ch == '}' and stack and stack.pop() == '{':
+                continue
+			# if close ']' pop and compare the pair to be opposite version of it
+            elif ch == ']' and stack and stack.pop() == '[':
+                continue
+			# If the above condition is not true, then its not valid
+            else:
+                return False
+        return True if not stack else False
+        
+        # --SECOND SOL--
+        
+        # stack = [s[0]]
+        # for i in s[1:]:
+        #     if i == ']' and stack and stack[-1] == '[':
+        #         stack.pop()
+        #     elif i == ')' and stack and stack[-1] == '(':
+        #         stack.pop()
+        #     elif i == '}' and stack and stack[-1] == '{':
+        #         stack.pop()
+        #     else:
+        #         stack.append(i)
+        # return True if not stack else False
+            
+            
+            
+        
