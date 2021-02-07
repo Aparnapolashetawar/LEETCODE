@@ -1,0 +1,14 @@
+class Solution:
+    def sortArrayByParity(self, A: List[int]) -> List[int]:
+        lio=[]
+        lie=[]
+        l=[]
+        for i in A:
+            if i%2==0:
+                lie.append(i)
+            else:
+                lio.append(i)
+        l.extend(lie)
+        l.extend(lio)
+        return l
+        
