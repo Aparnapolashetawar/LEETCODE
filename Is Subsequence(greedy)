@@ -1,0 +1,26 @@
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        r=''
+        for i in t:
+            if i in s:
+                r+=i
+        print(s)
+        print(r)
+        if len(r)>=len(s):
+            ss=''
+            sr=''
+            for i in s:
+                if i not in ss:
+                    ss+=i
+            for j in r:
+                if j not in sr:
+                    sr+=j
+            print(ss)
+            print(sr)
+            if ss==sr:
+                return True
+            else:
+                return False
+        else:
+            return False
+
