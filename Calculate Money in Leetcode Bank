@@ -1,0 +1,23 @@
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        count=0
+        if n<=7:
+            for i in range(1,n+1):
+                count+=i
+            return count
+        else:
+            li=[]
+            c=0
+            k=int(n/7)+1
+            for i in range(k):
+                li_sub=[]
+                for j in range(1,8):
+                    c+=1
+                    if c>n:
+                        break
+                    else:
+                        p=j+i
+                        count+=p
+                        li_sub.append(p)
+                li.append(li_sub)
+            return count
