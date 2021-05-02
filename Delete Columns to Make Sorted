@@ -1,0 +1,19 @@
+class Solution:
+    def minDeletionSize(self, strs: List[str]) -> int:
+        c=[]
+        n=len(strs[0])
+        for i in range(n):
+            s=''
+            for j in strs:
+                s+=j[i]
+            c.append(s)
+        count=len(c)
+        n=len(c)
+        for k in c:
+            li=list(k)
+            li1=li[:]
+            li1.sort()
+            if li!=li1:
+                count-=1
+        return n-count
+            
