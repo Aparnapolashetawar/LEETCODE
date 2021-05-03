@@ -1,0 +1,12 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        li=list(bin(num)[2:])
+        lix=[]
+        for i in li:
+            if i=='1':
+                lix.append('0')
+            else:
+                lix.append('1')
+        p=''.join(lix)
+        k=int(p,2)
+        return k
