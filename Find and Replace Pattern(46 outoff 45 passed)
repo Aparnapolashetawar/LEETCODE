@@ -1,0 +1,22 @@
+class Solution:
+    def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
+        n=len(pattern)
+        result=[]
+        k=len(set(pattern))
+        li={}
+        for i in set(pattern):
+            li[i]=pattern.count(i)
+        for j in words:
+            if len(j)==n and len(set(j))==k:
+                s=''
+                for i in range(len(pattern)):
+                    if pattern.count(pattern[i])==j.count(j[i]):
+                        s+=j[i]
+                        continue
+                    else:
+                        break
+                if s==j:
+                    result.append(j)
+        return result
+            
+        
