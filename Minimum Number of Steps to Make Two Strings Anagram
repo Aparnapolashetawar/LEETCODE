@@ -1,0 +1,17 @@
+class Solution:
+    def minSteps(self, s: str, t: str) -> int:
+        a=Counter(s)
+        b=Counter(t)
+        count=0
+        a_keys=list(a.keys())
+        for i in a_keys:
+            if a[i]-b[i]>0:
+                count+=abs(a[i]-b[i])
+        return count
+                
+                    
+                    
+                
+
+        
+        
