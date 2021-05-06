@@ -1,0 +1,16 @@
+from collections import Counter
+class Solution:
+    def beautySum(self, s: str) -> int:
+        final=[]
+        for i in range(len(s)):
+            for j in range(i+1,len(s)+1):
+                final.append(s[i:j])
+        count=0
+        for i in final:
+            li=Counter(i)
+            values=li.values()
+            mx=max(values)
+            mn=min(values)
+            count+=(mx-mn)
+        return count
+        
