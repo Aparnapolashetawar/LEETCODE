@@ -1,0 +1,20 @@
+from itertools import product
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        dit={'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz'}
+        if digits=="":
+            return []
+        elif len(digits)==1 and digits!="":
+            l=list(dit[digits[0]])
+            return l
+        else:
+            l=[]
+            for i in digits:
+                l.append(list(dit[i]))
+            li=list(product(*l))
+            result=[]
+            for i in li:
+                result.append(''.join(i))
+            return result
+            
+        
