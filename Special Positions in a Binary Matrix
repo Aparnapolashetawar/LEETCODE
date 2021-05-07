@@ -1,0 +1,29 @@
+class Solution:
+    def numSpecial(self, mat: List[List[int]]) -> int:
+        columns=[]
+        binary_value_list=[]
+        count=0
+        for i in range(len(mat[0])):
+            c=[]
+            for j in range(len(mat)):
+                c.append(mat[j][i])
+            columns.append(c)
+        # print(columns)
+        for i in range(len(mat)):
+            li=[]
+            for j in range(len(mat[i])):
+                if mat[i][j]==1:
+                    li.append(i)
+                    li.append(j)
+            if len(li)!=0:
+                binary_value_list.append(li)
+        # print(binary_value_list)
+        for i in binary_value_list:
+            rn=i[0]
+            cn=i[1]
+            if sum(mat[rn])==1 and sum(columns[cn])==1:
+                count+=1
+        return count
+                
+                
+        
