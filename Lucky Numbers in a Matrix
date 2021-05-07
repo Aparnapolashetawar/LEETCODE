@@ -1,0 +1,23 @@
+class Solution:
+    def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
+        min_li=[]
+        columns=[]
+        result=[]
+        max_li=[]
+        for i in matrix:
+            min_li.append(min(i))
+        for i in range(len(matrix[0])):
+            c=[]
+            for j in matrix:
+                c.append(j[i])
+            columns.append(c)
+        for k in columns:
+            max_li.append(max(k))
+        for i in min_li:
+            if i in max_li:
+                result.append(i)
+        return result
+                
+                
+        
+        
