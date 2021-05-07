@@ -1,0 +1,23 @@
+class Solution:
+    def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
+        dic = {}
+        for r in range(len(matrix)):
+            for c in range(len(matrix[r])):
+                if (r - c) not in dic:
+                    dic[(r-c)] = [matrix[r][c]]
+                else:
+                    dic[(r-c)].append(matrix[r][c])
+        values=list(dic.values())
+        result=[]
+        for i in values:
+            if len(i)==1 or len(set(i))==1:
+                result.append(i)
+        if result==values:
+            return True
+        else:
+            return False
+                
+        
+        
+                
+        
