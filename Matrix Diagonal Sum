@@ -1,0 +1,16 @@
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        result=[]
+        s=0
+        r=len(mat)-1
+        for i in range(len(mat)):
+            d=[]
+            for j in range(len(mat[0])):
+                if i==j or i+j==r:
+                    d.append(mat[i][j])
+            result.append(d)
+        for i in result:
+            s+=sum(i)
+        return s
+                
+        
