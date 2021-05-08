@@ -1,0 +1,18 @@
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        li=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t',
+           'u','v','w','x','y','z']
+        result=[]
+        for i in li:
+            if i in sentence:
+                result.append(i)
+            else:
+                break
+        if len(li)==len(result):
+            return True
+        else:
+            return False
+                
+        
+            
+        
