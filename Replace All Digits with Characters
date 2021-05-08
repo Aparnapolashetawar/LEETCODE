@@ -1,0 +1,14 @@
+class Solution:
+    def replaceDigits(self, s: str) -> str:
+        r=''
+        for i in range(len(s)):
+            if s[i].isalpha():
+                r+=s[i]
+            else:
+                p=ord(s[i-1])+int(s[i])
+                r+=chr(p)
+        return r
+                
+            
+            
+        
