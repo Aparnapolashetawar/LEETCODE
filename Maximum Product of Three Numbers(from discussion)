@@ -1,0 +1,27 @@
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        x=sorted(nums)
+        a = x[0]*x[1]*x[-1]
+        b=x[-1]*x[-2]*x[-3]
+        return max(a,b)
+        
+        # ------------------------------------------68 passed
+        # nums.sort(reverse=True)
+        # prod=1
+        # for i in nums[:3]:
+        #     prod*=i
+        # return prod
+# ------------------------------------------67 passed
+#         li=[]
+#         c_=0
+#         for i in nums:
+#             if i<0:
+#                 li.append(-(i))
+#             else:
+#                 li.append(i)
+#         li.sort(reverse=True)
+#         prod=1
+#         for k in li[:3]:
+#             prod*=k
+#         return prod
+        
