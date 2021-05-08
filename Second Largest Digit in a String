@@ -1,0 +1,14 @@
+class Solution:
+    def secondHighest(self, s: str) -> int:
+        li=[]
+        for i in s:
+            if i.isdigit():
+                li.append(int(i))
+        li=list(set(li))
+        li.sort(reverse=True)
+        if len(set(li))==1 or len(li)<=1:
+            return -1
+        else:
+            return li[1]
+            
+                
